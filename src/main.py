@@ -21,10 +21,6 @@ jogadores = {
     
 }
 
-@app.get("/")
-def inicio():
-  return jogadores
-
 @app.get("/jogador/{id_jogador}")
 def get_jogador(id_jogador: int):
    return jogadores[id_jogador]
@@ -37,10 +33,6 @@ def get_jogador_time(time: str):
         return jogadores[jogador_id]
   return {"Dados": "Nao foi encontrado"}
          
-
-def main():
-    print("Hello from fundamentos-fastapi!")
-
-
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def inicio():
+  return jogadores
