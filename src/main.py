@@ -19,6 +19,11 @@ jogadores = {
       "idade": 25,
       "time": "Corinthians"
     },
+    4: {
+        "nome": "Ranielle",
+        "idade": 27,
+        "time": "Corinthians"
+        },
     
 }
 
@@ -51,3 +56,12 @@ def cadastra_jogador(jogador_id: int,jogador: Jogador):
       return {"Erro": "Jogador Já Existe!"}
    jogadores[jogador_id] = jogador
    return jogadores[jogador_id]
+
+
+@app.delete("/jogador/{jogador_id}")
+def exclui_jogador(jogador_id: int):
+   if jogador_id not in jogadores:
+      return {"Erro": "O Jogador NAO existe"}
+   del jogadores[jogador_id]
+   return {"Mensagem": "Jogador exluido com sucesso"}
+   
