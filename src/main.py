@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import Optional
 
 app = FastAPI()
 
@@ -31,6 +32,27 @@ class Jogador(BaseModel):
    nome: str
    idade: int
    time: str
+
+class AtualizaJogador(BaseModel):
+   nome: Optional[str] = None
+   idade: Optional[int] = None
+   time: Optional[str] = None
+
+
+@app.put("/jogador/{jogador_id}")
+def atualiza_jogador(jogador_id: int, jogador: AtualizaJogador):
+   if jogador_id not in jogadores:
+      return {"Erro": "O Jogador NAO existe"}
+   
+   if jogador.nome != None:
+      jogadores[jogador_id]["nome"] = jogador.nome
+   if jogador.idade != None:
+       jogadores[jogador_id]["idade"] = jogador.idade
+   if jogador.time != None:
+      jogadores[jogador_id]["time"] = jogador.time
+
+   return jogadores[jogador_id]      
+   
 
 @app.get("/jogador/{id_jogador}")
 def get_jogador(id_jogador: int):
