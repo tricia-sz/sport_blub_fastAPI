@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -21,6 +22,11 @@ jogadores = {
     
 }
 
+class Jogador(BaseModel):
+   nome: str
+   idade: int
+   time: str
+
 @app.get("/jogador/{id_jogador}")
 def get_jogador(id_jogador: int):
    return jogadores[id_jogador]
@@ -32,7 +38,16 @@ def get_jogador_time(time: str):
     if jogadores[jogador_id]["time"] == time:
         return jogadores[jogador_id]
   return {"Dados": "Nao foi encontrado"}
-         
+
+# API Metodos # 
+#      
 @app.get("/")
 def inicio():
   return jogadores
+
+@app.post("/jogador/{jogador_id}")
+def cadastra_jogador(jogador_id: int,jogador: Jogador):
+   if jogador_id in jogadores:
+      return {"Erro": "Jogador Já Existe!"}
+   jogadores[jogador_id] = jogador
+   return jogadores[jogador_id]
