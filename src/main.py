@@ -4,7 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 def inicio():
-  return{"Mensagem": "Iniciando FARM STACK"}
-
-
-
+  return{"Mensagem": "Olá Mundo"}
