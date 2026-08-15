@@ -77,7 +77,6 @@ http://127.0.0.1:8000
 ```
 ---
 
----
 
 # 🔌 API — Endpoints
 
@@ -117,7 +116,9 @@ sport_blub_fastAPI/
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
-``
+``` 
+
+# ATENCAO, O FRONT SE TRATA DE OUTRO PROJETO EM REPOSITORIO INDEPENDENTE, DECISAO ESTRATEGICA NAO INSERIR NO MESMO REPOSITORIO
 
 
 # ⚛️ Frontend
@@ -189,8 +190,6 @@ A aplicação utiliza a seguinte arquitetura:
 └──────────────────────────┘
 ```
 
-`
----
 
 ---
 
