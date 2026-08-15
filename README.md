@@ -1,18 +1,10 @@
+frontend / backend
 ![alt text](local.png)
 
 # ⚽ Sport Blub — Full Stack
 
 ## 🛠️ Tecnologias Utilizadas
-
-### Frontend
-
-- ⚛️ React
-- 📘 TypeScript
-- 🎨 Tailwind CSS
-- 🟢 Node.js
-
 ### Backend
-
 - 🐍 Python
 - ⚡ FastAPI
 - 🚀 Uvicorn
@@ -38,12 +30,14 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 # 🚀 Executando o projeto
 
-## 01 — Clone o repositório
+## 01 — Clone O repositório 1 (backend)
 
 No terminal, execute:
 
 ```bash
+#backend
 git clone git@github.com:tricia-sz/sport_blub_fastAPI.git
+
 ```
 
 Entre na pasta do projeto:
@@ -83,7 +77,58 @@ http://127.0.0.1:8000
 ```
 ---
 
+---
+
+# 🔌 API — Endpoints
+
+A aplicação possui operações de **CRUD** para gerenciamento de jogadores:
+
+| Método | Endpoint | Descrição |
+|:---:|---|---|
+| `GET` | `/` | Página inicial da API |
+| `GET` | `/jogadores` | Lista todos os jogadores |
+| `GET` | `/jogadores/{id}` | Busca um jogador pelo ID |
+| `POST` | `/jogadores` | Cadastra um novo jogador |
+| `PUT` | `/jogadores/{id}` | Atualiza um jogador |
+| `DELETE` | `/jogadores/{id}` | Remove um jogador |
+
+---
+
+# 📁 Estrutura do projeto
+
+```text
+sport_blub_fastAPI/
+│
+├── backend/
+│   ├── config/
+│   │   └── database.py
+│   │
+│   ├── models/
+│   │   └── jogador.py
+│   │
+│   ├── routes/
+│   │   └── jogador.py
+│   │
+│   ├── schemas/
+│   │   └── jogador.py
+│   │
+│   └── api.py
+│
+├── pyproject.toml
+├── uv.lock
+└── README.md
+``
+
+
 # ⚛️ Frontend
+
+##  — Clone o repositório
+
+No terminal, execute:
+
+```bash
+git clone git@github.com:tricia-sz/sport_blub_front.git
+```
 
 ## 04 — Acesse a pasta do frontend
 
@@ -144,80 +189,8 @@ A aplicação utiliza a seguinte arquitetura:
 └──────────────────────────┘
 ```
 
+`
 ---
-
-# 🔌 API — Endpoints
-
-A aplicação possui operações de **CRUD** para gerenciamento de jogadores:
-
-| Método | Endpoint | Descrição |
-|:---:|---|---|
-| `GET` | `/` | Página inicial da API |
-| `GET` | `/jogadores` | Lista todos os jogadores |
-| `GET` | `/jogadores/{id}` | Busca um jogador pelo ID |
-| `POST` | `/jogadores` | Cadastra um novo jogador |
-| `PUT` | `/jogadores/{id}` | Atualiza um jogador |
-| `DELETE` | `/jogadores/{id}` | Remove um jogador |
-
----
-
-# 📁 Estrutura do projeto
-
-```text
-sport_blub_fastAPI/
-│
-├── backend/
-│   ├── config/
-│   │   └── database.py
-│   │
-│   ├── models/
-│   │   └── jogador.py
-│   │
-│   ├── routes/
-│   │   └── jogador.py
-│   │
-│   ├── schemas/
-│   │   └── jogador.py
-│   │
-│   └── api.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   └── ...
-│   │
-│   ├── package.json
-│   └── ...
-│
-├── pyproject.toml
-├── uv.lock
-└── README.md
-```
----
-
-### 📚 Documentação da API
-
-O FastAPI disponibiliza automaticamente uma documentação interativa:
-
-**Swagger UI**
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-**ReDoc**
-
-```text
-http://127.0.0.1:8000/redoc
-```
-### URLs FRONT
-
-| Serviço | URL |
-|---|---|
-| ⚛️ Frontend | http://localhost:5173/ |
-| ⚡ API | http://127.0.0.1:8000/ |
-| 📚 Swagger | http://127.0.0.1:8000/docs |
-| 📖 ReDoc | http://127.0.0.1:8000/redoc |
 
 ---
 
