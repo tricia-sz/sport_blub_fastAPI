@@ -1,22 +1,32 @@
 from fastapi import APIRouter
-
 from config.database import conexao
 from models.jogador import Jogador
 from schemas.jogador import jogadorEntidade, listaJogadoresEntidade
+from bson import ObjectId
 
-jogador_router =  APIRouter()
+jogador_router = APIRouter()
 
 @jogador_router.get('/')
 async def inicio():
-  return "Bem-vindo ao FullStack Farm"
+    return "Bem vindo ao FullStack Farm"
 
+# Lista todos os Jogadores
 @jogador_router.get('/jogadores')
 async def lista_jogadores():
-  return listaJogadoresEntidade(conexao.local.jogador.find())
+    return listaJogadoresEntidade(conexao.local.jogador.find())
 
-# Insere novos jogadoresmongodb://localhost:27017/
+# Detalhes de um Jogador
+@jogador_router.get('/jogadores/{jogador_id}')
+def busca_jogador_id(jogador_id):
+    return jogadorEntidade(
+        conexao.local.jogador.find_one
+        (
+            {"_id": ObjectId(jogador_id)}
+        )
+    )
+
+# Insere novos Jogadores
 @jogador_router.post('/jogadores')
-async def  cadastra_jogadores(jogador: Jogador):
-  conexao.local.jogador.insert_one(dict(jogador))
-  return listaJogadoresEntidade(conexao.local.jogador.find())
-
+async def cadastra_jogadores(jogador: Jogador):
+    conexao.local.jogador.insert_one(dict(jogador))
+    return listaJogadoresEntidade(conexao.local.jogador.find())
