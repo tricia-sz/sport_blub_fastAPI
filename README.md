@@ -1,7 +1,7 @@
 ![alt text](form.png)
 # 🔵 Clonando este repositório:
 ```
- git clone  git@github.com:tricia-sz/fastAPI_fundamentals.git
+ git clone  git@github.com:tricia-sz/sport_blub_fastAPI.git
 
 ``` 
 
