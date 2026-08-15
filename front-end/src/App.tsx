@@ -1,12 +1,23 @@
 import './App.css'
+import { Footer } from './components/footer/footer'
+import { Header } from './components/header/header'
+import { PlayerForm } from './components/sections/playerForm';
 
-function App() {
+export function App() {
 
+  
   return (
-    <>
-      <h1 className='bg-blue-300'>Ola de novo React</h1>
-    </>
-  )
+    <div className="flex min-h-screen flex-col">
+      <Header />
+
+      <main className="flex-1 py-10">
+        <PlayerForm />
+        
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
 export default App
