@@ -2,11 +2,7 @@
 
 # ⚽ Sport Blub — Full Stack
 
-Aplicação **Full Stack** para cadastro e gerenciamento de jogadores, desenvolvida com **React + TypeScript** no frontend e **FastAPI + Python + MongoDB** no backend.
-
----
-
-## 🛠️ Tecnologias
+## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
 
@@ -40,7 +36,7 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 ---
 
-# 🚀 Instalação
+# 🚀 Executando o projeto
 
 ## 01 — Clone o repositório
 
@@ -85,23 +81,6 @@ Se tudo estiver funcionando corretamente, a API estará disponível em:
 ```text
 http://127.0.0.1:8000
 ```
-
-### 📚 Documentação da API
-
-O FastAPI disponibiliza automaticamente uma documentação interativa:
-
-**Swagger UI**
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-**ReDoc**
-
-```text
-http://127.0.0.1:8000/redoc
-```
-
 ---
 
 # ⚛️ Frontend
@@ -138,7 +117,7 @@ http://localhost:5173/
 
 ---
 
-# 🔄 Funcionamento
+# 🔄 Arquitetura
 
 A aplicação utiliza a seguinte arquitetura:
 
@@ -214,29 +193,24 @@ sport_blub_fastAPI/
 ├── uv.lock
 └── README.md
 ```
-
 ---
 
-# 💻 Desenvolvimento
+### 📚 Documentação da API
 
-Para desenvolver o projeto, mantenha **dois terminais** abertos.
+O FastAPI disponibiliza automaticamente uma documentação interativa:
 
-### Terminal 1 — Backend
+**Swagger UI**
 
-Na raiz do projeto:
-
-```bash
-uv run uvicorn --app-dir backend/ api:app --reload
+```text
+http://127.0.0.1:8000/docs
 ```
 
-### Terminal 2 — Frontend
+**ReDoc**
 
-```bash
-cd frontend
-npm run dev
+```text
+http://127.0.0.1:8000/redoc
 ```
-
-### URLs
+### URLs FRONT
 
 | Serviço | URL |
 |---|---|
@@ -247,14 +221,7 @@ npm run dev
 
 ---
 
-# 📝 Objetivo
-
-Este projeto foi desenvolvido para praticar conceitos de desenvolvimento **Full Stack**, integração entre frontend e backend, criação de APIs REST, operações CRUD e persistência de dados utilizando MongoDB.
-
----
-
-## 👩‍💻 Autora
-
-**Patrícia**
+By: **Trícia**
 
 [![GitHub](https://img.shields.io/badge/GitHub-tricia--sz-181717?logo=github)](https://github.com/tricia-sz)
+
