@@ -30,7 +30,7 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 # 🚀 Executando o projeto
 
-## 01 — Clone O repositório 1 (backend)
+## 01 — Clone o repositório 1 (backend)
 
 No terminal, execute:
 
@@ -118,7 +118,7 @@ sport_blub_fastAPI/
 └── README.md
 ``` 
 
-# ATENCAO, O FRONT SE TRATA DE OUTRO PROJETO EM REPOSITORIO INDEPENDENTE, DECISAO ESTRATEGICA NAO INSERIR NO MESMO REPOSITORIO
+# ATENCAO, CASO QUEIRA EXPERIMENTAR A API JUNTO AO FRONT-END, CLONE O REPOSITORIO ABAIXO:
 
 
 # ⚛️ Frontend
@@ -128,20 +128,20 @@ sport_blub_fastAPI/
 No terminal, execute:
 
 ```bash
-git clone git@github.com:tricia-sz/sport_blub_front.git
+ git clone git@github.com:tricia-sz/sport_blub_frontend.git
 ```
 
-## 04 — Acesse a pasta do frontend
+##  — Acesse a pasta do frontend
 
 Abra **outro terminal** e execute:
 
 ```bash
-cd frontend
+cd sport_blub_frontend
 ```
 
 ---
 
-## 05 — Instale as dependências
+##  — Instale as dependências
 
 ```bash
 npm install
@@ -149,7 +149,7 @@ npm install
 
 ---
 
-## 06 — Execute o frontend
+## — Execute o frontend
 
 ```bash
 npm run dev
@@ -163,33 +163,24 @@ http://localhost:5173/
 
 ---
 
-# 🔄 Arquitetura
+# 💻 MANTER SERVIDORES RODANDO
 
-A aplicação utiliza a seguinte arquitetura:
+Para rodar TODO o projeto (front e back), mantenha **dois terminais** abertos.
 
-```text
-┌──────────────────────────┐
-│        FRONTEND          │
-│     React + TypeScript   │
-│     localhost:5173       │
-└────────────┬─────────────┘
-             │
-             │ HTTP / REST API
-             ▼
-┌──────────────────────────┐
-│         BACKEND          │
-│    FastAPI + Python      │
-│     localhost:8000       │
-└────────────┬─────────────┘
-             │
-             │
-             ▼
-┌──────────────────────────┐
-│         MongoDB          │
-│        Database          │
-└──────────────────────────┘
+### Terminal 1 — Backend
+
+Na raiz do projeto:
+
+```bash
+uv run uvicorn --app-dir backend/ api:app --reload
 ```
 
+### Terminal 2 — Frontend
+
+```bash
+cd frontend
+npm run dev
+```
 
 ---
 
