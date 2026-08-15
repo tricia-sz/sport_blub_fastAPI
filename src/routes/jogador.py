@@ -30,3 +30,22 @@ def busca_jogador_id(jogador_id):
 async def cadastra_jogadores(jogador: Jogador):
     conexao.local.jogador.insert_one(dict(jogador))
     return listaJogadoresEntidade(conexao.local.jogador.find())
+
+# Atualiza Jogador
+@jogador_router.put('/jogadores/{jogador_id}')
+async def atualiza_jogador(jogador_id, jogador: Jogador):
+    conexao.local.jogador.find_one_and_update(
+        {
+            "_id": ObjectId(jogador_id)
+        },
+        {
+            "$set": dict(jogador)
+        }
+    )
+    return jogadorEntidade(
+        conexao.local.jogador.find_one(
+            {
+            "_id": ObjectId(jogador_id)
+            } 
+        )
+    )
